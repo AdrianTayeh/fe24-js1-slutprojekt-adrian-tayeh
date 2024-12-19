@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Movie Database</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="./js/main.js" type="module"></script>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../js/main.js" type="module"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent mx-3">
-        <a class="navbar-brand" href="#">MovieDB</a>
+        <a class="navbar-brand" href="../index.html">MovieDB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="./html/popular.html">Popular Movies</a>
+                    <a class="nav-link" href="popular.html">Popular Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./html/top-rated.html">Top Rated Movies</a>
+                    <a class="nav-link" href="top-rated.html">Top Rated Movies</a>
                 </li>
             </ul>
             <form id="search-form" class="d-flex">
@@ -31,27 +31,8 @@
     </nav>
     <div class="container">
         <div id="error-container"></div>
-        <h2 class="text-center my-4">Featured Movies</h2>
-        <div id="featuredMoviesCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" id="featured-movies">
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#featuredMoviesCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#featuredMoviesCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <h2 class="text-center my-4">Popular Actors</h2>
-        <div class="row" id="popular-actors">
-        </div>
-
-        <h2 class="text-center my-4">Latest Movie Added</h2>
-        <div class="row" id="latest-news">
-        </div>
+        <h1 class="text-center my-4">Search Results</h1>
+        <div id="search-results" class="row"></div>
     </div>
 
     <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
@@ -62,10 +43,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="detailModalBody">
+                    <!-- Detailed content will be loaded here -->
                 </div>
             </div>
         </div>
     </div>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js" type="module"></script>
 </body>
 </html>

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AdrianTayeh/fe24-js1-slutprojekt-adrian-tayeh#readme",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3"
   }
 }
