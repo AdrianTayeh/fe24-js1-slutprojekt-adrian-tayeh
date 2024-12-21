@@ -2,9 +2,10 @@
   "name": "slutprojekt",
   "version": "1.0.0",
   "description": "This project uses The Movie Database (TMDb) API as a backend to build a site to display info about movies, actors, directors, etc. The site allows users to browse and search for movies, view detailed information about each movie, and more.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
     "@popperjs/core": "^2.11.8",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "parcel": "^2.13.3"
   }
 }

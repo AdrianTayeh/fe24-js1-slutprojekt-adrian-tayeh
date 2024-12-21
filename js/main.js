@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { displayFeaturedMovies, displayPopularActors, displayLatestNews } from './index.js';
 import { displayPopular } from './popular.js';
 import { displayTopRated } from './top-rated.js';
@@ -13,6 +15,7 @@ document.getElementById('search-form').addEventListener('submit', function(event
     window.location.href = `/html/search-results.html?query=${encodeURIComponent(query)}`;
 });
 
+// Call functions based on the current page
 if (document.getElementById('featured-movies')) {
     displayFeaturedMovies();
     displayPopularActors();

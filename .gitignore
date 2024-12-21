@@ -1,5 +1,7 @@
 # Node modules
 node_modules/
+dist/
+
 
 # Logs
 logs
@@ -58,6 +60,7 @@ jspm_packages/
 
 # Parcel cache
 .cache/
+.parcel-cache/
 
 # Next.js build output
 .next/
