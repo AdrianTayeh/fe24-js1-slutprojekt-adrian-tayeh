@@ -18,3 +18,4 @@ This project uses The Movie Database (TMDb) API as a backend to build a site to 
 ### Libraries
 
 - **Bootstrap**: Used for styling and responsive design. [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- **Axios**: Used for fetching data from API. [Axios Documentation](https://axios-http.com/docs/intro)
