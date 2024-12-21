@@ -17,4 +17,4 @@ This project uses The Movie Database (TMDb) API as a backend to build a site to 
 
 ### Libraries
 
-- **Bootstrap**: Used for styling and responsive design. [Bootstrap Documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+- **Bootstrap**: Used for styling and responsive design. [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
