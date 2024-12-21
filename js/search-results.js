@@ -5,7 +5,9 @@ import { createCard } from './cardTemplate.js';
 const searchUrl = 'https://api.themoviedb.org/3/search/multi?language=en-US';
 const placeholderImage = 'https://via.placeholder.com/500x300?text=No+Image';
 
-// Handle the search and display results.
+/**
+ * Handle the search and display results.
+ */
 export async function handleSearch() {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('query');

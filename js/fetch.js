@@ -8,12 +8,8 @@ const API_KEY = "98336a8670b5a655e0c97ebafe62e652";
  */
 async function fetchData(url) {
     try {
-        const response = await fetch(`${url}&api_key=${API_KEY}`);
-        if (!response.ok) {
-            throw new Error(`API error: ${response.status}`);
-        }
-        const data = await response.json();
-        return data;
+        const response = await axios.get(`${url}&api_key=${API_KEY}`);
+        return response.data;
     } catch (error) {
         console.error('Error fetching data:', error);
         displayErrorMessage('Network error: Unable to fetch data. Please check your internet connection.');
@@ -22,12 +18,12 @@ async function fetchData(url) {
 }
 
 /**
- * Display an error message on the page.
+ * Display an error message to the user.
  * @param {string} message - The error message to display.
  */
 function displayErrorMessage(message) {
     const errorContainer = document.getElementById('error-container');
-    if(errorContainer) {
+    if (errorContainer) {
         errorContainer.innerHTML = `<div class="alert alert-danger" role="alert">${message}</div>`;
     } else {
         alert(message);
