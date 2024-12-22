@@ -12,7 +12,7 @@ import { handleSearch } from './search-results.js';
 document.getElementById('search-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const query = document.getElementById('search-input').value;
-    window.location.href = `./html/search-results.html?query=${encodeURIComponent(query)}`;
+    window.location.href = `/html/search-results.html?query=${encodeURIComponent(query)}`;
 });
 
 // Call functions based on the current page
