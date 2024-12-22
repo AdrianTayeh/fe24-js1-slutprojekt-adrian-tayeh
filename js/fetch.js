@@ -19,7 +19,7 @@ async function fetchData(url) {
         }
     } catch (error) {
         console.error("Error fetching data:", error);
-        displayErrorMessage("Network error: Unable to fetch data. Please check your internet connection.");
+        displayErrorMessage(`${error}. Please try again later.`);
         throw error;
     }
 }
