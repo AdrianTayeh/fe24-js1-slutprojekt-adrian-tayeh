@@ -11,7 +11,7 @@ export async function displayTopRated() {
     if (data && data.results) {
         const topRatedContainer = document.getElementById('top-rated');
         topRatedContainer.innerHTML = '<h2 class="col-12">Top Rated Movies</h2>';
-        data.results.forEach(movie => {
+        data.results.slice(0, 10).forEach(movie => {
             topRatedContainer.innerHTML += createCard(movie, 'movie', placeholderImage, false);
         });
 
