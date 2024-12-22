@@ -8,6 +8,7 @@ const API_KEY = "98336a8670b5a655e0c97ebafe62e652";
  */
 async function fetchData(url) {
     try {
+        clearErrorMessage();
         const response = await axios.get(`${url}&api_key=${API_KEY}`);
         if (response.status >= 200 && response.status < 300) {
             return response.data;
@@ -33,6 +34,14 @@ function displayErrorMessage(message) {
         errorContainer.innerHTML = `<div class="alert alert-danger" role="alert">${message}</div>`;
     } else {
         alert(message);
+    }
+}
+
+// Clear the error message from the user interface.
+function clearErrorMessage() {
+    const errorContainer = document.getElementById("error-container");
+    if (errorContainer) {
+        errorContainer.innerHTML = '';
     }
 }
 
