@@ -9,7 +9,9 @@ export async function showDetail(id, type) {
     const detailModal = new bootstrap.Modal(document.getElementById('detailModal'));
     const detailModalBody = document.getElementById('detailModalBody');
     try {
+        console.log(`Fetching details for ${type} with ID: ${id}`);
         const data = await fetchData(`https://api.themoviedb.org/3/${type}/${id}?language=en-US`);
+        console.log(`Fetched data for ${type} with ID: ${id}`, data);
         let detailContent = '';
 
         if (type === 'movie') {
@@ -36,8 +38,8 @@ export async function showDetail(id, type) {
  */
 function generateMovieDetailContent(data) {
     return `
-        <h3>${data.title}</h3>
-        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" class="img-fluid mb-3" alt="${data.title}">
+        <h3 class="text-center">${data.title}</h3>
+        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" class="img-fluid mb-3 mx-auto d-block" alt="${data.title}">
         <p><strong>Release Date:</strong> ${data.release_date}</p>
         <p><strong>Overview:</strong> ${data.overview}</p>
         <p><strong>Genres:</strong> ${data.genres.map(genre => genre.name).join(', ')}</p>
@@ -48,13 +50,13 @@ function generateMovieDetailContent(data) {
 
 /**
  * Generate HTML content for TV show details.
- * @param {Object} data - The TV show data (title, air date, overview, seasons, episodes, etc.).
+ * @param {Object} data - The TV show data.
  * @returns {string} The HTML content.
  */
 function generateTvDetailContent(data) {
     return `
-        <h3>${data.name}</h3>
-        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" class="img-fluid mb-3" alt="${data.name}">
+        <h3 class="text-center">${data.name}</h3>
+        <img src="https://image.tmdb.org/t/p/w500${data.poster_path}" class="img-fluid mb-3 mx-auto d-block" alt="${data.name}">
         <p><strong>First Air Date:</strong> ${data.first_air_date}</p>
         <p><strong>Overview:</strong> ${data.overview}</p>
         <p><strong>Genres:</strong> ${data.genres.map(genre => genre.name).join(', ')}</p>
@@ -66,7 +68,7 @@ function generateTvDetailContent(data) {
 
 /**
  * Generate HTML content for person details.
- * @param {Object} data - The person data (name, age, credits, etc.).
+ * @param {Object} data - The person data.
  * @param {Object} credits - The person's credits data.
  * @returns {string} The HTML content.
  */
@@ -75,8 +77,8 @@ function generatePersonDetailContent(data, credits) {
     const totalCredits = credits.cast.length + credits.crew.length;
 
     return `
-        <h3>${data.name}</h3>
-        <img src="https://image.tmdb.org/t/p/w500${data.profile_path}" class="img-fluid mb-3" alt="${data.name}">
+        <h3 class="text-center">${data.name}</h3>
+        <img src="https://image.tmdb.org/t/p/w500${data.profile_path}" class="img-fluid mb-3 mx-auto d-block" alt="${data.name}">
         <p><strong>Known for:</strong> ${data.known_for_department}</p>
         <p><strong>Age:</strong> ${age}</p>
         <p><strong>Popularity:</strong> ${data.popularity}</p>
