@@ -27,7 +27,7 @@ export async function displayFeaturedMovies() {
                 `;
             });
 
-            // Add event listeners to carousel items
+            // Add event listeners to carousel items for detail modal
             document.querySelectorAll('.carousel-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const id = item.getAttribute('data-id');
@@ -52,7 +52,7 @@ export async function displayPopularActors() {
                 popularActorsContainer.innerHTML += createCard(actor, 'person', placeholderImage, false);
             });
 
-            // Add event listeners to cards
+            // Add event listeners to cards for detail modal
             document.querySelectorAll('.card').forEach(card => {
                 card.addEventListener('click', () => {
                     const id = card.getAttribute('data-id');

@@ -33,7 +33,7 @@ export async function showDetail(id, type) {
 
 /**
  * Generate HTML content for movie details.
- * @param {Object} data - The movie data.
+ * @param {Object} data - The movie data (name, overview, runtime, etc.).
  * @returns {string} The HTML content.
  */
 function generateMovieDetailContent(data) {
@@ -50,7 +50,7 @@ function generateMovieDetailContent(data) {
 
 /**
  * Generate HTML content for TV show details.
- * @param {Object} data - The TV show data.
+ * @param {Object} data - The TV show data (name, air date, seasons, erc.).
  * @returns {string} The HTML content.
  */
 function generateTvDetailContent(data) {
@@ -68,7 +68,7 @@ function generateTvDetailContent(data) {
 
 /**
  * Generate HTML content for person details.
- * @param {Object} data - The person data.
+ * @param {Object} data - The person data (name, age, credits, etc.).
  * @param {Object} credits - The person's credits data.
  * @returns {string} The HTML content.
  */

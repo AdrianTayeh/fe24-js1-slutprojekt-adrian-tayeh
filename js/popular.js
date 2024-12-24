@@ -16,7 +16,7 @@ export async function displayPopular() {
                 popularContainer.innerHTML += createCard(movie, 'movie', placeholderImage, false);
             });
 
-            // Add event listeners to cards
+            // Add event listeners to cards for detail modal
             document.querySelectorAll('.card').forEach(card => {
                 card.addEventListener('click', () => {
                     const id = card.getAttribute('data-id');

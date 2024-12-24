@@ -5,9 +5,7 @@ import { createCard } from './cardTemplate.js';
 const searchUrl = 'https://api.themoviedb.org/3/search/multi?language=en-US';
 const placeholderImage = 'https://via.placeholder.com/500x300?text=No+Image';
 
-/**
- * Handle the search and display results.
- */
+// Handle the search and display results.
 export async function handleSearch() {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('query');
@@ -59,7 +57,7 @@ export async function handleSearch() {
                 });
             }
 
-            // Add event listeners to cards
+            // Add event listeners to cards for detail modal
             document.querySelectorAll('.card').forEach(card => {
                 card.addEventListener('click', () => {
                     const id = card.getAttribute('data-id');
