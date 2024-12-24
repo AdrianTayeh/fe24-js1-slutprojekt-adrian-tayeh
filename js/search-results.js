@@ -18,18 +18,6 @@ export async function handleSearch() {
         const data = await fetchData(`${searchUrl}&query=${encodeURIComponent(query)}`);
         searchResultsContainer.innerHTML = '<h2 class="col-12">Search Results</h2>';
         if (data && data.results && data.results.length > 0) {
-            // Top-10 Movies List
-            const top10Movies = data.results
-                .filter(result => result.media_type === 'movie')
-                .sort((a, b) => b.vote_average - a.vote_average)
-                .slice(0, 10);
-            if (top10Movies.length > 0) {
-                searchResultsContainer.innerHTML += '<h3 class="col-12">Top 10 Movies</h3>';
-                top10Movies.forEach(movie => {
-                    searchResultsContainer.innerHTML += createCard(movie, 'movie', placeholderImage, true);
-                });
-            }
-
             // All Movies
             const allMovies = data.results.filter(result => result.media_type === 'movie');
             if (allMovies.length > 0) {
