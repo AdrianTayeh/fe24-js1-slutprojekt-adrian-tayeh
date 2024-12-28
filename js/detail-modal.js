@@ -8,8 +8,7 @@ import fetchData from './fetch.js';
 export async function showDetail(id, type) {
     const detailModal = new bootstrap.Modal(document.getElementById('detailModal'));
     const detailModalBody = document.getElementById('detailModalBody');
-    try {
-        console.log(`Fetching details for ${type} with ID: ${id}`);
+    console.log(`Fetching details for ${type} with ID: ${id}`);
         const data = await fetchData(`https://api.themoviedb.org/3/${type}/${id}?language=en-US`);
         console.log(`Fetched data for ${type} with ID: ${id}`, data);
         let detailContent = '';
@@ -25,10 +24,6 @@ export async function showDetail(id, type) {
 
         detailModalBody.innerHTML = detailContent;
         detailModal.show();
-    } catch (error) {
-        console.error('Error fetching detail data:', error);
-        displayErrorMessage('Failed to load details. Please check your internet connection and try again.');
-    }
 }
 
 /**
