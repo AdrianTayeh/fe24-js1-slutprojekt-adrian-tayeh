@@ -19,8 +19,19 @@ async function fetchData(url) {
         }
     } catch (error) {
         console.error("Error fetching data:", error);
-        displayErrorMessage(`${error}. Please try again later.`);
-        throw error;
+        let errorMessage = "Network error: Unable to fetch data. Please check your internet connection and try again.";
+        if (error.response) {
+            // Server responded with a status other than 2xx
+            errorMessage = `HTTP error! status: ${error.response.status} - ${error.response.statusText}`;
+        } else if (error.request) {
+            // Request was made but no response was received
+            errorMessage = "No response received from the server. Please try again later.";
+        } else {
+            // Something happened in setting up the request
+            errorMessage = `Error: ${error.message}`;
+        }
+        displayErrorMessage(errorMessage);
+        throw new Error(errorMessage);
     }
 }
 
@@ -37,7 +48,7 @@ function displayErrorMessage(message) {
     }
 }
 
-// Clear the error message from the user interface.
+// Runs every time the user tries to fetch data, clears the previous error message
 function clearErrorMessage() {
     const errorContainer = document.getElementById("error-container");
     if (errorContainer) {
